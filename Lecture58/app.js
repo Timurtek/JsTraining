@@ -56,6 +56,7 @@ Person.prototype.attack = function(attackTo) {
 }
 
 //HEAL
+
 Person.prototype.heal = function(){
 
   if(this.health <= 0 ){
