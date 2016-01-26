@@ -1,20 +1,3 @@
-//building our own mini library
-
-//focusing on structure
-
-// we are going to call our library greetr
-
-
-//when given a firstname, last name and optional language, it generates formal and informal greetings
-
-//support english and spanish
-
-// reusable library/framework
-
-//easy to type 'G$()' structure
-
-//support jQuery
-
 (function(global, $){
 
   var Greetr = function(firstname, lastname, language){
@@ -24,7 +7,6 @@
   };
 
   //Languages
-
   var supportedLanguages = ['en','es'];
 
   var greetings = {
@@ -45,6 +27,7 @@
   //Languages End
 
   Greetr.prototype= {
+
     fullName:function(){
       return this.firstname+' '+ this.lastname;
     },
@@ -96,7 +79,7 @@
 
       return this;
     }
-
+//end of Greetr prototype
   };
 
   Greetr.init = function(firstname, lastname, language){
