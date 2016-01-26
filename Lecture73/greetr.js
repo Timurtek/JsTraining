@@ -7,21 +7,24 @@
   };
 
   //Languages
-  var supportedLanguages = ['en','es'];
+  var supportedLanguages = ['en','es','tr'];
 
   var greetings = {
     en:'Hello',
-    es:'Hola'
+    es:'Hola',
+    tr: 'Merhaba'
   };
 
   var formalGreetings = {
     en:'Greetings',
-    es:'Saludos'
+    es:'Saludos',
+    tr:'Hos Geldin'
   };
 
   var logMessages = {
     en:'Logged in ',
-    es:'Inicio sesion '
+    es:'Inicio sesion ',
+    tr: 'Oturum '
   };
 
   //Languages End
@@ -78,6 +81,25 @@
       this.validate();
 
       return this;
+    },
+    HTMLGreeting: function(selector,formal){
+      if(!$){
+        throw 'jQuery is not loaded';
+      }
+      if(!selector){
+        throw 'Selector is not loaded';
+      }
+      var msg;
+      if (formal) {
+          msg= this.formalGreeting();
+      }else{
+        msg= this.greeting();
+      }
+
+      $(selector).html(msg);
+
+      return this;
+
     }
 //end of Greetr prototype
   };
@@ -88,6 +110,8 @@
       self.firstname = firstname || 'John';
       self.lastname  = lastname  || 'Doe' ;
       self.language  = language  || 'en'  ;
+
+      self.validate();
 
   }
 
